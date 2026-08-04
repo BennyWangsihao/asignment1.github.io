@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Design Document – GrainMeditate</title>
+    <link rel="stylesheet" href="styles.css">
+
+
+</head>
+<body>
+    <header>
+        <h1>System Design Document</h1>
+        <p class="subtitle">Browser Audio Instrument s3997984 Sihao(Benny): <strong>GrainMeditate</strong></p >
+    </header>
+
+    <main>
+        <!-- 1. Design Scenario -->
+        <section id="scenario-analysis">
+            <h2>1. Design Scenario – What and Why</h2>
+            <p>
+                This instrument is a <em>meditation tool</em> that uses sound.
+                Its job is to help the user feel calm and mindful.
+                It should feel gentle and safe, not like a normal musical instrument
+                that you have to “play well”.
+            </p >
+            <p>
+                Every design choice – colours, shapes, sounds – should make the user
+                feel relaxed. The sound should never be sudden or scary.
+                It should change slowly and feel like a soft background texture.
+            </p >
+            <p>
+                To do this, the interface will be very simple. Big, soft controls
+                will remind the user of breathing. For sound, we will use
+                <em>granular synthesis</em>. This technique cuts a recording into tiny
+                pieces (grains) and plays them back in new ways. It is perfect for
+                making slow, dreamy soundscapes.
+            </p >
+        </section>
+
+        <!-- 2. Project Overview -->
+        <section id="project-overview">
+            <h2>2. Project Overview</h2>
+            <h3>In Short</h3>
+            <p>
+                <strong>GrainMeditate</strong> is a web instrument. It uses granular
+                synthesis and sounds from nature and singing bowls. The user moves
+                one main slider to gently shape the sound. There are no sudden changes,
+                only smooth fades. It feels like sculpting soft air.
+            </p >
+
+            <h3>How It Meets the Scenario</h3>
+            <ul>
+                <li>
+                    <strong>Purpose – meditation:</strong> It is a background tool.
+                    You can leave it on and focus on your breath. You can touch it
+                    a little to steer the sound, but you don’t have to.
+                </li>
+                <li>
+                    <strong>Worth – calm and open to all:</strong> Soft, natural
+                    colours. No difficult words. No need to know music. At first,
+                    you only see one big friendly control. More options are hidden
+                    so you are not overwhelmed.
+                </li>
+            </ul>
+        </section>
+
+        <!-- 3. Project Framing -->
+        <section id="project-framing">
+            <h2>3. Project Framing – What’s In and What’s Out</h2>
+            <p>
+                Framing means deciding the boundaries of the project.
+            </p >
+
+            <h3>Included (our palette)</h3>
+            <ul>
+                <li><strong>Platform:</strong> Web browser (Web Audio API).</li>
+                <li><strong>Main technique:</strong> Granular synthesis (changing
+                    grain size, density, pitch, and position in stereo).</li>
+                <li><strong>Sounds:</strong> Real recordings of acoustic instruments
+                    and nature. No computer-generated waveforms.</li>
+                <li><strong>Interaction:</strong> Mouse or touch on one “flow” slider,
+                    plus optional hidden controls.</li>
+                <li><strong>Look and feel:</strong> Soft gradients, round shapes,
+                    slow animations.</li>
+                <li><strong>Audio feel:</strong> Always-on ambient sound. No silence
+                    unless the user fades the volume down.</li>
+            </ul>
+
+            <h3>Excluded (not in the project)</h3>
+            <ul>
+                <li>Beats, rhythms, or a step sequencer – they take focus away from calm.</li>
+                <li>Harsh or noisy sounds (no distortion, no bit-crushing).</li>
+                <li>Piano-keyboard or note input – interaction is all smooth and continuous.</li>
+                <li>Visual clutter: no normal knobs, number labels, or complex diagrams.</li>
+            </ul>
+        </section>
+
+        <!-- 4. Interaction Design Analysis -->
+        <section id="interaction-analysis">
+            <h2>4. Learning from Other UIs</h2>
+            <p>
+                I studied four browser-based interfaces. Two of them I found on my own
+                (marked with *).
+            </p >
+
+            <!-- Analysis 1 -->
+            <article class="ui-analysis">
+                <h3>4.1 * “Ambient Chaos” – Purpose &amp; Worth</h3>
+                <p>
+                    Ambient Chaos is a very simple webpage. It makes endless ambient
+                    sound with only one slider for “intensity”. No words, just a
+                    coloured background and one control. This shows that a single
+                    control can feel deep if the sound engine is clever.
+                </p >
+                <p><em>What I learned:</em> I will also use one main control and map
+                    it to several sound features at once (grain density and stereo width).</p >
+                <figure>
+                    < img src="images/ambient-chaos.png" alt="Ambient Chaos screenshot">
+                    <figcaption>Ambient Chaos – one-slider interface.</figcaption>
+                </figure>
+            </article>
+
+            <!-- Analysis 2 -->
+            <article class="ui-analysis">
+                <h3>4.2 Patatap – Character &amp; Information Design</h3>
+                <p>
+                    Patatap turns key presses into colourful shapes and short sounds.
+                    It has no text instructions. You just press a key and something
+                    happens. It feels playful and invites you to explore. However,
+                    it works with short, separate taps – the opposite of our slow,
+                    smooth meditation tool.
+                </p >
+                <p><em>What I learned:</em> I want the same instant feedback without
+                    text, but I will make it soft and flowing, not short and jumpy.</p >
+                <figure>
+                    < img src="images/patatap.png" alt="Patatap interface">
+                    <figcaption>Patatap – playful, text-free feedback.</figcaption>
+                </figure>
+            </article>
+
+            <!-- Analysis 3 -->
+            <article class="ui-analysis">
+                <h3>4.3 * “Tone Matrix” – Feedback &amp; System State</h3>
+                <p>
+                    Tone Matrix is a grid of squares that you turn on and off. It is
+                    a step sequencer. The great thing is that you can see the whole
+                    system state at once. Each square is both a button and a light.
+                    This makes it very easy to understand, with low mental effort.
+                </p >
+                <p><em>What I learned:</em> My main “flow” control will also show the
+                    state. Its glow will get brighter when the grain density is higher.
+                    Other controls will only appear when asked, so the default view
+                    stays calm and clear.</p >
+                <figure>
+                    < img src="images/tone-matrix.png" alt="Tone Matrix grid">
+                    <figcaption>Tone Matrix – grid as both input and display.</figcaption>
+                </figure>
+            </article>
+
+            <!-- Analysis 4 -->
+            <article class="ui-analysis">
+                <h3>4.4 Chrome Music Lab – Spectrogram – Visual Metaphor</h3>
+                <p>
+                    The Spectrogram shows sound as a colourful waterfall. It looks
+                    beautiful and a bit scientific. You want to make a sound just to
+                    see the colours move. This visual metaphor (sound = colour)
+                    invites you gently without feeling like a game.
+                </p >
+                <p><em>What I learned:</em> I will add a simple particle animation
+                    that moves with the audio. It will look like a slow, drifting
+                    cloud of light. This helps the user feel that the instrument is
+                    alive, even when they are not touching it.</p >
+                <figure>
+                    < img src="images/spectrogram.png" alt="Spectrogram visualisation">
+                    <figcaption>Spectrogram – sound seen as colour.</figcaption>
+                </figure>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Your Name – Specialisation Work Index</p >
+        <p>
+            <a href=" ">Home</a > |
+            <a href="https://github.com/BennyWangsihao">GitHub</a > |
+            <a href="community.html">Community of Practice</a >
+        </p >
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
