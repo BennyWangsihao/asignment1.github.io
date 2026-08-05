@@ -1,224 +1,135 @@
-"""<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GrainMeditate System Design</title>
+  <title>GrainMeditate</title>
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
-
 <body>
-  <div class="background-glow glow-one"></div>
-  <div class="background-glow glow-two"></div>
-
   <header>
-    <p class="small-title">BROWSER AUDIO INSTRUMENT</p>
     <h1>GrainMeditate</h1>
-    <p class="student">s3997984 — Sihao Wang</p>
-
+    <p>s3997984 — Sihao Wang</p>
     <nav>
-      <a href="index.html">Home</a>
       <a href="#scenario">Scenario</a>
       <a href="#overview">Overview</a>
       <a href="#framing">Framing</a>
-      <a href="#analysis">UI Analysis</a>
+      <a href="#analysis">UI Research</a>
       <a href="#prototype">Prototype</a>
     </nav>
   </header>
 
   <main>
-    <section class="hero-card">
-      <div>
-        <p class="section-label">SYSTEM DESIGN DOCUMENT</p>
-        <h2>A calm digital space made with sound</h2>
-        <p>
-          GrainMeditate is a browser instrument for meditation.
-          It uses slow sound, simple controls and moving light to help
-          the user relax.
-        </p>
-      </div>
-
-      <div class="hero-visual">
-        <div class="ring ring-one"></div>
-        <div class="ring ring-two"></div>
-        <div class="ring ring-three"></div>
-        <div class="core"></div>
-      </div>
-    </section>
-
     <section id="scenario">
-      <p class="section-label">01 / SCENARIO</p>
-      <h2>Design Scenario</h2>
-
+      <h2>1. Design Scenario</h2>
       <p>
-        GrainMeditate is a meditation tool using sound. Its main goal is
-        to help the user feel calm and focused.
+        GrainMeditate is a browser audio instrument for meditation.
+        It helps the user feel calm and focused.
       </p>
-
       <p>
-        The user does not need music skills. The sound should change slowly
-        and should not feel sudden, loud or stressful.
+        The sound should be soft and slow. The user does not need
+        music knowledge.
       </p>
-
       <p>
-        The project uses granular synthesis. This technique cuts a recording
-        into very small sound pieces and plays them in different ways.
-        It can create soft and dreamy textures.
+        The project uses granular synthesis. It cuts a recording into
+        small pieces and creates a new sound texture.
       </p>
     </section>
 
     <section id="overview">
-      <p class="section-label">02 / OVERVIEW</p>
-      <h2>Project Overview</h2>
-
-      <div class="info-grid">
-        <article>
-          <h3>Project Idea</h3>
-          <p>
-            GrainMeditate uses nature sounds and singing bowl sounds.
-            The user moves one main Flow slider to slowly change the sound.
-          </p>
-        </article>
-
-        <article>
-          <h3>Purpose</h3>
-          <p>
-            The sound can stay in the background while the user meditates,
-            studies or rests.
-          </p>
-        </article>
-
-        <article>
-          <h3>Value</h3>
-          <p>
-            The interface is simple and open to everyone. It uses clear words,
-            large controls and no difficult music settings.
-          </p>
-        </article>
-      </div>
+      <h2>2. Project Overview</h2>
+      <p>
+        GrainMeditate uses nature and singing bowl sounds.
+        The user changes the sound with simple sliders.
+      </p>
+      <p>
+        The project is made for meditation, study and rest.
+      </p>
     </section>
 
     <section id="framing">
-      <p class="section-label">03 / FRAMING</p>
-      <h2>Project Framing</h2>
-
+      <h2>3. Project Framing</h2>
       <div class="columns">
-        <article class="list-card">
+        <article>
           <h3>Included</h3>
           <ul>
             <li>Web Audio API</li>
             <li>Granular synthesis</li>
-            <li>Nature and singing bowl sounds</li>
-            <li>Mouse and touch control</li>
-            <li>Soft animation and glowing visuals</li>
-            <li>Simple sound settings</li>
+            <li>Nature sounds</li>
+            <li>Simple controls</li>
+            <li>Slow animation</li>
           </ul>
         </article>
 
-        <article class="list-card">
+        <article>
           <h3>Not Included</h3>
           <ul>
             <li>Fast beats</li>
-            <li>Loud or harsh sounds</li>
-            <li>Piano keyboard controls</li>
+            <li>Loud sounds</li>
+            <li>Music keyboard</li>
             <li>Too many buttons</li>
-            <li>Complex music settings</li>
-            <li>Scores or competition</li>
+            <li>Competition</li>
           </ul>
         </article>
       </div>
     </section>
 
     <section id="analysis">
-      <p class="section-label">04 / RESEARCH</p>
-      <h2>Interaction Design Analysis</h2>
+      <h2>4. Interaction Design Analysis</h2>
 
-      <div class="analysis-grid">
-        <article class="ui-card">
-          <div class="card-number">01</div>
-          <h3>Ambient Chaos</h3>
-          <p>
-            Ambient Chaos uses one simple control. It shows that one slider
-            can still create many sound changes.
-          </p>
-          <p><strong>What I learned:</strong> My project will also use one main Flow slider.</p>
-          <img src="images/ambient-chaos.png" alt="Ambient Chaos interface">
-        </article>
+      <article class="ui-card">
+        <h3>Ambient Chaos</h3>
+        <p>
+          It uses one main slider. This showed me that one control
+          can make many sound changes.
+        </p>
+        <img src="images/ambient-chaos.png" alt="Ambient Chaos interface">
+      </article>
 
-        <article class="ui-card">
-          <div class="card-number">02</div>
-          <h3>Patatap</h3>
-          <p>
-            Patatap gives sound and visual feedback immediately when the user
-            presses a key.
-          </p>
-          <p><strong>What I learned:</strong> My project should also show clear visual feedback.</p>
-          <img src="images/patatap.png" alt="Patatap interface">
-        </article>
+      <article class="ui-card">
+        <h3>Patatap</h3>
+        <p>
+          It gives sound and visual feedback quickly.
+          My project will also show a clear response.
+        </p>
+        <img src="images/patatap.png" alt="Patatap interface">
+      </article>
 
-        <article class="ui-card">
-          <div class="card-number">03</div>
-          <h3>Tone Matrix</h3>
-          <p>
-            Tone Matrix uses simple squares that work as controls and also
-            show the current sound state.
-          </p>
-          <p><strong>What I learned:</strong> My control should also show the sound level.</p>
-          <img src="images/tone-matrix.png" alt="Tone Matrix interface">
-        </article>
+      <article class="ui-card">
+        <h3>Tone Matrix</h3>
+        <p>
+          Its controls also show the sound state.
+          My circle will change when sound is playing.
+        </p>
+        <img src="images/tone-matrix.png" alt="Tone Matrix interface">
+      </article>
 
-        <article class="ui-card">
-          <div class="card-number">04</div>
-          <h3>Chrome Music Lab Spectrogram</h3>
-          <p>
-            The Spectrogram shows sound as moving colour. This helps the user
-            see the audio.
-          </p>
-          <p><strong>What I learned:</strong> My project will use a moving light circle.</p>
-          <img src="images/spectrogram.png" alt="Chrome Music Lab Spectrogram">
-        </article>
-      </div>
+      <article class="ui-card">
+        <h3>Chrome Music Lab Spectrogram</h3>
+        <p>
+          It shows sound as moving colour.
+          My project also uses a moving circle.
+        </p>
+        <img src="images/spectrogram.png" alt="Chrome Music Lab Spectrogram">
+      </article>
     </section>
 
     <section id="prototype">
-      <p class="section-label">05 / PROTOTYPE</p>
-      <h2>Interactive Sound Prototype</h2>
+      <h2>5. Simple Sound Prototype</h2>
+      <p>Click the button and move the sliders.</p>
 
-      <p>
-        Press Start Sound and move the sliders. The light animation changes
-        with the sound.
-      </p>
-
-      <div class="instrument">
-        <div class="visualiser">
-          <div class="pulse pulse-one"></div>
-          <div class="pulse pulse-two"></div>
-          <div id="soundCircle" class="sound-circle"></div>
-          <div class="wave wave-a"></div>
-          <div class="wave wave-b"></div>
-          <div class="wave wave-c"></div>
-        </div>
-
+      <div class="player">
+        <div id="circle" class="circle"></div>
         <p id="status">Sound is stopped.</p>
 
-        <button id="startButton" type="button">Start Sound</button>
+        <button id="playButton" type="button">Start Sound</button>
 
-        <div class="control-group">
-          <div class="control-title">
-            <label for="flow">Flow</label>
-            <span id="flowValue">50%</span>
-          </div>
-          <input id="flow" type="range" min="0" max="100" value="50">
-        </div>
+        <label for="flow">Flow <span id="flowValue">50%</span></label>
+        <input id="flow" type="range" min="0" max="100" value="50">
 
-        <div class="control-group">
-          <div class="control-title">
-            <label for="volume">Volume</label>
-            <span id="volumeValue">30%</span>
-          </div>
-          <input id="volume" type="range" min="0" max="100" value="30">
-        </div>
+        <label for="volume">Volume <span id="volumeValue">70%</span></label>
+        <input id="volume" type="range" min="0" max="100" value="70">
       </div>
     </section>
   </main>
@@ -226,13 +137,7 @@
   <footer>
     <p>© 2026 Sihao Wang</p>
     <p>
-      <a href="index.html">Home</a> ·
-      <a href="https://github.com/BennyWangsihao" target="_blank">GitHub</a> ·
-      <a href="community.html">Community of Practice</a>
-    </p>
-  </footer>
-</body>
-</html>a href="index.html">Home</a> |
+      <a href="index.html">Home</a> |
       <a href="https://github.com/BennyWangsihao" target="_blank">GitHub</a> |
       <a href="community.html">Community of Practice</a>
     </p>
