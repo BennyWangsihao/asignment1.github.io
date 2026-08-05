@@ -3,19 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GrainMeditate</title>
+  <title>GrainMeditate System Design</title>
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
+
 <body>
   <header>
     <h1>GrainMeditate</h1>
-    <p>s3997984 — Sihao Wang</p>
+    <p class="student">System Design Document — s3997984 Sihao Wang</p>
+
     <nav>
       <a href="#scenario">Scenario</a>
       <a href="#overview">Overview</a>
       <a href="#framing">Framing</a>
-      <a href="#analysis">UI Research</a>
+      <a href="#analysis">UI Analysis</a>
       <a href="#prototype">Prototype</a>
     </nav>
   </header>
@@ -24,39 +26,46 @@
     <section id="scenario">
       <h2>1. Design Scenario</h2>
       <p>
-        GrainMeditate is a browser audio instrument for meditation.
-        It helps the user feel calm and focused.
+        GrainMeditate is a browser-based audio instrument for meditation.
+        Its purpose is to help the user feel calm and focused.
       </p>
       <p>
-        The sound should be soft and slow. The user does not need
-        music knowledge.
+        The sound should be soft and slow. The user does not need music
+        knowledge or performance skills.
       </p>
       <p>
-        The project uses granular synthesis. It cuts a recording into
-        small pieces and creates a new sound texture.
+        The project uses granular synthesis. This technique divides a sound
+        into small pieces and uses them to create a new sound texture.
       </p>
     </section>
 
     <section id="overview">
       <h2>2. Project Overview</h2>
+
+      <h3>Project Idea</h3>
       <p>
-        GrainMeditate uses nature and singing bowl sounds.
-        The user changes the sound with simple sliders.
+        GrainMeditate uses nature recordings and singing bowl sounds.
+        The user can change the sound with simple controls.
       </p>
+
+      <h3>Purpose and Value</h3>
       <p>
-        The project is made for meditation, study and rest.
+        The project can be used during meditation, study or rest.
+        The interface is simple so that anyone can use it.
       </p>
     </section>
 
     <section id="framing">
       <h2>3. Project Framing</h2>
+
       <div class="columns">
         <article>
           <h3>Included</h3>
           <ul>
+            <li>Web browser</li>
             <li>Web Audio API</li>
             <li>Granular synthesis</li>
-            <li>Nature sounds</li>
+            <li>Nature recordings</li>
             <li>Simple controls</li>
             <li>Slow animation</li>
           </ul>
@@ -66,8 +75,9 @@
           <h3>Not Included</h3>
           <ul>
             <li>Fast beats</li>
-            <li>Loud sounds</li>
-            <li>Music keyboard</li>
+            <li>Harsh sounds</li>
+            <li>Piano keyboard</li>
+            <li>Complex settings</li>
             <li>Too many buttons</li>
             <li>Competition</li>
           </ul>
@@ -78,57 +88,71 @@
     <section id="analysis">
       <h2>4. Interaction Design Analysis</h2>
 
-      <article class="ui-card">
-        <h3>Ambient Chaos</h3>
-        <p>
-          It uses one main slider. This showed me that one control
-          can make many sound changes.
-        </p>
+      <article class="research">
+        <div>
+          <h3>Ambient Chaos</h3>
+          <p>
+            Ambient Chaos uses one main slider. It showed me that one
+            control can still make different sound changes.
+          </p>
+        </div>
         <img src="images/ambient-chaos.png" alt="Ambient Chaos interface">
       </article>
 
-      <article class="ui-card">
-        <h3>Patatap</h3>
-        <p>
-          It gives sound and visual feedback quickly.
-          My project will also show a clear response.
-        </p>
+      <article class="research">
+        <div>
+          <h3>Patatap</h3>
+          <p>
+            Patatap gives sound and visual feedback immediately.
+            My instrument should also give clear feedback.
+          </p>
+        </div>
         <img src="images/patatap.png" alt="Patatap interface">
       </article>
 
-      <article class="ui-card">
-        <h3>Tone Matrix</h3>
-        <p>
-          Its controls also show the sound state.
-          My circle will change when sound is playing.
-        </p>
+      <article class="research">
+        <div>
+          <h3>Tone Matrix</h3>
+          <p>
+            Tone Matrix uses controls that also show the current sound state.
+            My sound circle will also show when sound is active.
+          </p>
+        </div>
         <img src="images/tone-matrix.png" alt="Tone Matrix interface">
       </article>
 
-      <article class="ui-card">
-        <h3>Chrome Music Lab Spectrogram</h3>
-        <p>
-          It shows sound as moving colour.
-          My project also uses a moving circle.
-        </p>
+      <article class="research">
+        <div>
+          <h3>Chrome Music Lab Spectrogram</h3>
+          <p>
+            The Spectrogram shows sound as moving colour.
+            This influenced the simple visual feedback in my project.
+          </p>
+        </div>
         <img src="images/spectrogram.png" alt="Chrome Music Lab Spectrogram">
       </article>
     </section>
 
     <section id="prototype">
-      <h2>5. Simple Sound Prototype</h2>
-      <p>Click the button and move the sliders.</p>
+      <h2>5. Sound Prototype</h2>
+      <p>Click Start Sound, then move the Flow and Volume sliders.</p>
 
       <div class="player">
-        <div id="circle" class="circle"></div>
+        <div id="circle" class="circle" aria-hidden="true"></div>
         <p id="status">Sound is stopped.</p>
 
         <button id="playButton" type="button">Start Sound</button>
 
-        <label for="flow">Flow <span id="flowValue">50%</span></label>
+        <label for="flow">
+          Flow
+          <span id="flowValue">50%</span>
+        </label>
         <input id="flow" type="range" min="0" max="100" value="50">
 
-        <label for="volume">Volume <span id="volumeValue">70%</span></label>
+        <label for="volume">
+          Volume
+          <span id="volumeValue">70%</span>
+        </label>
         <input id="volume" type="range" min="0" max="100" value="70">
       </div>
     </section>
@@ -138,7 +162,7 @@
     <p>© 2026 Sihao Wang</p>
     <p>
       <a href="index.html">Home</a> |
-      <a href="https://github.com/BennyWangsihao" target="_blank">GitHub</a> |
+      <a href="https://github.com/BennyWangsihao" target="_blank" rel="noopener">GitHub</a> |
       <a href="community.html">Community of Practice</a>
     </p>
   </footer>

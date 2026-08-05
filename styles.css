@@ -1,4 +1,4 @@
-  {
+ * {
   box-sizing: border-box;
 }
 
@@ -9,73 +9,70 @@ html {
 body {
   margin: 0;
   color: #111111;
-  background: #eef2f6;
+  background: #e9edf2;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 19px;
-  line-height: 1.8;
+  font-size: 18px;
+  line-height: 1.7;
 }
 
 header,
 main,
 footer {
-  width: min(92%, 950px);
+  width: min(92%, 960px);
   margin: auto;
 }
 
 header {
-  padding: 42px 0 22px;
+  padding: 45px 0 25px;
 }
 
 h1 {
   margin: 0;
+  color: #083b66;
   font-size: clamp(3rem, 8vw, 5rem);
-  background: linear-gradient(90deg, #123c69, #187b9d);
-  -webkit-background-clip: text;
-  color: transparent;
 }
 
 h2 {
-  color: #123c69;
-  font-size: 2rem;
+  margin-top: 0;
+  color: #083b66;
 }
 
-h3 {
-  color: #172b4d;
-}
-
+h3,
 p,
 li,
 label {
   color: #111111;
 }
 
+.student {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
 nav {
-  margin-top: 20px;
+  margin-top: 22px;
 }
 
 nav a {
   display: inline-block;
-  margin: 5px;
-  padding: 8px 13px;
+  margin: 4px;
+  padding: 9px 14px;
   color: #ffffff;
-  background: #123c69;
-  border-radius: 18px;
+  background: #083b66;
+  border-radius: 6px;
   text-decoration: none;
-  transition: 0.2s;
 }
 
 nav a:hover {
-  background: #187b9d;
-  transform: translateY(-2px);
+  background: #12628f;
 }
 
 section {
-  margin: 25px 0;
+  margin-bottom: 26px;
   padding: 32px;
-  border: 2px solid #c8ced8;
-  border-radius: 16px;
+  border: 1px solid #b8c1cc;
+  border-radius: 10px;
   background: #ffffff;
-  box-shadow: 0 8px 22px rgba(18, 60, 105, 0.08);
 }
 
 .columns {
@@ -84,39 +81,37 @@ section {
   gap: 18px;
 }
 
-.columns article,
-.ui-card {
+.columns article {
   padding: 20px;
-  border: 1px solid #c8ced8;
-  border-radius: 12px;
-  background: #f8fafc;
-  transition: 0.2s;
+  border: 1px solid #c9d0d8;
+  background: #f6f8fa;
 }
 
-.columns article:hover,
-.ui-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(18, 60, 105, 0.10);
+.research {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 24px;
+  align-items: center;
+  margin-top: 18px;
+  padding: 20px;
+  border: 1px solid #c9d0d8;
+  background: #f6f8fa;
 }
 
-.ui-card {
-  margin-top: 16px;
-}
-
-.ui-card img {
+.research img {
   width: 100%;
-  margin-top: 12px;
-  border: 1px solid #aeb7c5;
-  border-radius: 8px;
+  min-height: 160px;
+  border: 1px solid #9ca8b5;
+  background: #dce2e8;
+  object-fit: cover;
 }
 
 .player {
   max-width: 430px;
-  margin: 22px auto 0;
+  margin: 24px auto 0;
   padding: 26px;
-  border: 3px solid #123c69;
-  border-radius: 14px;
-  background: #f8fbff;
+  border: 2px solid #083b66;
+  background: #f7fafc;
   text-align: center;
 }
 
@@ -125,8 +120,7 @@ section {
   height: 100px;
   margin: 0 auto 18px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #187b9d, #6bc4d8);
-  box-shadow: 0 0 20px rgba(24, 123, 157, 0.25);
+  background: #168aad;
 }
 
 .circle.playing {
@@ -134,62 +128,51 @@ section {
 }
 
 @keyframes pulse {
-  0%,
-  100% {
-    transform: scale(0.95);
-  }
-
   50% {
-    transform: scale(1.1);
+    transform: scale(1.12);
   }
 }
 
 button {
   padding: 11px 22px;
   border: 0;
-  border-radius: 20px;
+  border-radius: 6px;
   color: #ffffff;
-  background: #123c69;
+  background: #083b66;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.2s;
 }
 
 button:hover {
-  background: #187b9d;
-  transform: translateY(-2px);
+  background: #12628f;
 }
 
 label {
   display: flex;
   justify-content: space-between;
-  margin-top: 18px;
+  margin-top: 20px;
   font-weight: bold;
 }
 
 input[type="range"] {
   width: 100%;
   height: 30px;
-  accent-color: #123c69;
+  accent-color: #083b66;
 }
 
 footer {
-  padding: 30px 0;
-  color: #111111;
+  padding: 12px 0 35px;
   text-align: center;
 }
 
 footer a {
-  color: #123c69;
+  color: #083b66;
   font-weight: bold;
 }
 
-@media (max-width: 700px) {
-  body {
-    font-size: 18px;
-  }
-
-  .columns {
+@media (max-width: 720px) {
+  .columns,
+  .research {
     grid-template-columns: 1fr;
   }
 
@@ -197,21 +180,3 @@ footer a {
     padding: 22px;
   }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation: none !important;
-    transition: none !important;
-  }
-}
-"""
-
-(dst / "styles.css").write_text(css, encoding="utf-8")
-
-zip_path = Path("/mnt/data/grainmeditate-clear-simple-effects.zip")
-with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as z:
-    for f in dst.rglob("*"):
-        if f.is_file():
-            z.write(f, f.relative_to(dst))
-
-print(zip_path)
