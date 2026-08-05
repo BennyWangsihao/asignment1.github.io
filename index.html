@@ -18,6 +18,7 @@
       <a href="#overview">Overview</a>
       <a href="#framing">Framing</a>
       <a href="#analysis">UI Analysis</a>
+      <a href="#system">System</a>
       <a href="#prototype">Prototype</a>
     </nav>
   </header>
@@ -25,17 +26,29 @@
   <main>
     <section id="scenario">
       <h2>1. Design Scenario</h2>
+
       <p>
         GrainMeditate is a browser-based audio instrument for meditation.
-        Its purpose is to help the user feel calm and focused.
+        Its main purpose is to help the user feel calm, focused and comfortable.
+        It is not designed as a normal musical instrument that requires skill.
       </p>
+
       <p>
-        The sound should be soft and slow. The user does not need music
-        knowledge or performance skills.
+        The user should be able to open the page, start the sound and relax.
+        The controls should be easy to understand. The sound should change slowly
+        so the experience does not become stressful or confusing.
       </p>
+
       <p>
-        The project uses granular synthesis. This technique divides a sound
-        into small pieces and uses them to create a new sound texture.
+        The project responds to the scenario by using a soft visual style,
+        simple interaction and quiet sound. It should support meditation,
+        study breaks and rest.
+      </p>
+
+      <p>
+        The project also values accessibility. A user should not need music
+        theory or audio production knowledge. Large buttons, clear text and
+        simple sliders make the instrument easier to use.
       </p>
     </section>
 
@@ -44,45 +57,88 @@
 
       <h3>Project Idea</h3>
       <p>
-        GrainMeditate uses nature recordings and singing bowl sounds.
-        The user can change the sound with simple controls.
+        GrainMeditate uses nature recordings, singing bowl sounds and soft
+        electronic tones. The final instrument will use granular synthesis
+        to divide recordings into small sound pieces called grains.
       </p>
 
-      <h3>Purpose and Value</h3>
       <p>
-        The project can be used during meditation, study or rest.
-        The interface is simple so that anyone can use it.
+        These grains can be played at different speeds, pitches and positions.
+        This can create a slow and dreamy sound texture that changes over time.
+      </p>
+
+      <h3>User Experience</h3>
+      <p>
+        The user starts the sound with one button. A Flow slider changes the
+        speed and pitch of the sound. A Volume slider controls how loud it is.
+        A moving circle shows when the instrument is active.
+      </p>
+
+      <p>
+        The interface does not ask the user to make a song. Instead, the user
+        gently changes an existing sound environment. This makes the experience
+        less like performing and more like shaping a calm atmosphere.
+      </p>
+
+      <h3>Purpose and Worth</h3>
+      <p>
+        The purpose is to create a simple sound space for relaxation.
+        The main values are calmness, ease of use, safety and openness.
+        The design should avoid sudden sounds, complex menus and pressure.
       </p>
     </section>
 
     <section id="framing">
       <h2>3. Project Framing</h2>
 
+      <p>
+        Project framing explains what the project will include and what it will
+        leave out. This helps keep the design focused and realistic.
+      </p>
+
       <div class="columns">
         <article>
           <h3>Included</h3>
           <ul>
-            <li>Web browser</li>
+            <li>Web browser platform</li>
+            <li>HTML, CSS and JavaScript</li>
             <li>Web Audio API</li>
             <li>Granular synthesis</li>
-            <li>Nature recordings</li>
-            <li>Simple controls</li>
-            <li>Slow animation</li>
+            <li>Nature and singing bowl recordings</li>
+            <li>Simple sliders and buttons</li>
+            <li>Slow visual animation</li>
+            <li>Mouse and touch interaction</li>
           </ul>
         </article>
 
         <article>
           <h3>Not Included</h3>
           <ul>
-            <li>Fast beats</li>
-            <li>Harsh sounds</li>
-            <li>Piano keyboard</li>
-            <li>Complex settings</li>
-            <li>Too many buttons</li>
-            <li>Competition</li>
+            <li>Fast beats and dance rhythms</li>
+            <li>Harsh distortion</li>
+            <li>Piano keyboard controls</li>
+            <li>Complex audio editing</li>
+            <li>Too many menus</li>
+            <li>User accounts</li>
+            <li>Scores or competition</li>
+            <li>Professional studio tools</li>
           </ul>
         </article>
       </div>
+
+      <h3>Visual Style</h3>
+      <p>
+        The website uses a light background, dark text and blue details.
+        This makes the information easy to read. Rounded shapes and slow
+        movement give the project a gentle and quiet feeling.
+      </p>
+
+      <h3>Sound Style</h3>
+      <p>
+        The sound should be soft, warm and continuous. It should not suddenly
+        become loud. The final version will use recorded sounds, while this
+        prototype uses browser-generated tones to test the interaction.
+      </p>
     </section>
 
     <section id="analysis">
@@ -92,8 +148,12 @@
         <div>
           <h3>Ambient Chaos</h3>
           <p>
-            Ambient Chaos uses one main slider. It showed me that one
-            control can still make different sound changes.
+            Ambient Chaos uses one main slider. The page is simple, but the
+            sound can still change in different ways.
+          </p>
+          <p>
+            <strong>What I learned:</strong> GrainMeditate can also use one
+            main control to change several sound qualities.
           </p>
         </div>
         <img src="images/ambient-chaos.png" alt="Ambient Chaos interface">
@@ -103,8 +163,12 @@
         <div>
           <h3>Patatap</h3>
           <p>
-            Patatap gives sound and visual feedback immediately.
-            My instrument should also give clear feedback.
+            Patatap gives sound and visual feedback immediately. The user can
+            understand that an action has worked without reading instructions.
+          </p>
+          <p>
+            <strong>What I learned:</strong> GrainMeditate should also give
+            clear visual feedback when sound starts or changes.
           </p>
         </div>
         <img src="images/patatap.png" alt="Patatap interface">
@@ -114,8 +178,12 @@
         <div>
           <h3>Tone Matrix</h3>
           <p>
-            Tone Matrix uses controls that also show the current sound state.
-            My sound circle will also show when sound is active.
+            Tone Matrix uses controls that also show the current state.
+            Active squares light up, so the user can see what is playing.
+          </p>
+          <p>
+            <strong>What I learned:</strong> The sound circle in my project
+            should move when audio is active.
           </p>
         </div>
         <img src="images/tone-matrix.png" alt="Tone Matrix interface">
@@ -125,23 +193,60 @@
         <div>
           <h3>Chrome Music Lab Spectrogram</h3>
           <p>
-            The Spectrogram shows sound as moving colour.
-            This influenced the simple visual feedback in my project.
+            The Spectrogram shows sound as moving colour. This makes invisible
+            audio easier to understand and more interesting to watch.
+          </p>
+          <p>
+            <strong>What I learned:</strong> GrainMeditate should connect sound
+            with a simple visual movement.
           </p>
         </div>
         <img src="images/spectrogram.png" alt="Chrome Music Lab Spectrogram">
       </article>
     </section>
 
+    <section id="system">
+      <h2>5. Simple System Design</h2>
+
+      <div class="system-grid">
+        <article>
+          <h3>Input</h3>
+          <p>The user presses buttons and moves sliders.</p>
+        </article>
+
+        <article>
+          <h3>Audio</h3>
+          <p>JavaScript and the Web Audio API create and change the sound.</p>
+        </article>
+
+        <article>
+          <h3>Visual Feedback</h3>
+          <p>The circle moves when the sound is playing.</p>
+        </article>
+
+        <article>
+          <h3>Output</h3>
+          <p>The user hears a soft tone through speakers or headphones.</p>
+        </article>
+      </div>
+    </section>
+
     <section id="prototype">
-      <h2>5. Sound Prototype</h2>
-      <p>Click Start Sound, then move the Flow and Volume sliders.</p>
+      <h2>6. Sound Prototype</h2>
+
+      <p>
+        First click Test Sound. You should hear a short beep.
+        Then click Start Ambient Sound and move the sliders.
+      </p>
 
       <div class="player">
         <div id="circle" class="circle" aria-hidden="true"></div>
-        <p id="status">Sound is stopped.</p>
+        <p id="status" aria-live="polite">Sound is stopped.</p>
 
-        <button id="playButton" type="button">Start Sound</button>
+        <div class="buttons">
+          <button id="testButton" type="button">Test Sound</button>
+          <button id="playButton" type="button">Start Ambient Sound</button>
+        </div>
 
         <label for="flow">
           Flow
