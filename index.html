@@ -3,88 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GrainMeditate System Design</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
+  <title>Loop Together - System Design</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <header>
-    <h1>GrainMeditate</h1>
-    <p class="student">System Design Document — s3997984 Sihao Wang</p>
+    <h1>Loop Together</h1>
+    <p>Browser-Based Audio Instrument</p>
 
-    <nav>
+    <button id="menuButton">Menu</button>
+
+    <nav id="menu">
       <a href="#scenario">Scenario</a>
       <a href="#overview">Overview</a>
       <a href="#framing">Framing</a>
       <a href="#analysis">UI Analysis</a>
       <a href="#system">System</a>
-      <a href="#prototype">Prototype</a>
     </nav>
   </header>
 
   <main>
+    <section class="intro">
+      <h2>System Design Document</h2>
+      <p><strong>Name:</strong> Sihao Wang</p>
+      <p><strong>Student ID:</strong> s3997984</p>
+      <p><strong>Program:</strong> Digital Media</p>
+      <p><strong>Scenario:</strong> Collaborative and Social Creation</p>
+      <p><strong>Extended Technique:</strong> Looping and Sampling</p>
+    </section>
+
     <section id="scenario">
-      <h2>1. Design Scenario</h2>
+      <h2>1. Design Scenario Analysis</h2>
 
       <p>
-        GrainMeditate is a browser-based audio instrument for meditation.
-        Its main purpose is to help the user feel calm, focused and comfortable.
-        It is not designed as a normal musical instrument that requires skill.
+        My chosen scenario is collaborative and social creation. I understand this
+        scenario as designing an instrument that helps people make music together.
       </p>
 
       <p>
-        The user should be able to open the page, start the sound and relax.
-        The controls should be easy to understand. The sound should change slowly
-        so the experience does not become stressful or confusing.
+        The project should allow users to record short sounds, place them into loops
+        and combine them with sounds made by other people.
       </p>
 
       <p>
-        The project responds to the scenario by using a soft visual style,
-        simple interaction and quiet sound. It should support meditation,
-        study breaks and rest.
-      </p>
-
-      <p>
-        The project also values accessibility. A user should not need music
-        theory or audio production knowledge. Large buttons, clear text and
-        simple sliders make the instrument easier to use.
+        The main values of the project are accessibility, creativity, communication
+        and shared ownership. Users should not need professional music skills.
       </p>
     </section>
 
     <section id="overview">
       <h2>2. Project Overview</h2>
 
-      <h3>Project Idea</h3>
+      <h3>Project Name</h3>
+      <p>Loop Together</p>
+
+      <h3>Synopsis</h3>
       <p>
-        GrainMeditate uses nature recordings, singing bowl sounds and soft
-        electronic tones. The final instrument will use granular synthesis
-        to divide recordings into small sound pieces called grains.
+        Loop Together is a simple browser-based audio instrument for the general
+        public. Users can record a short sound with a microphone or choose a sample.
+        The sound will repeat inside a shared music loop.
       </p>
 
       <p>
-        These grains can be played at different speeds, pitches and positions.
-        This can create a slow and dreamy sound texture that changes over time.
+        Different users can add rhythm, voice and background sounds. Together, these
+        sounds create one group composition.
       </p>
 
-      <h3>User Experience</h3>
+      <h3>Purpose</h3>
       <p>
-        The user starts the sound with one button. A Flow slider changes the
-        speed and pitch of the sound. A Volume slider controls how loud it is.
-        A moving circle shows when the instrument is active.
-      </p>
-
-      <p>
-        The interface does not ask the user to make a song. Instead, the user
-        gently changes an existing sound environment. This makes the experience
-        less like performing and more like shaping a calm atmosphere.
-      </p>
-
-      <h3>Purpose and Worth</h3>
-      <p>
-        The purpose is to create a simple sound space for relaxation.
-        The main values are calmness, ease of use, safety and openness.
-        The design should avoid sudden sounds, complex menus and pressure.
+        The purpose is to make collaborative music creation simple and enjoyable.
+        The interface will use large buttons, clear colours and simple instructions.
       </p>
     </section>
 
@@ -92,184 +81,168 @@
       <h2>3. Project Framing</h2>
 
       <p>
-        Project framing explains what the project will include and what it will
-        leave out. This helps keep the design focused and realistic.
+        The project is designed as a playful music space instead of professional
+        music production software.
       </p>
 
-      <div class="columns">
+      <div class="two-columns">
         <article>
           <h3>Included</h3>
           <ul>
-            <li>Web browser platform</li>
-            <li>HTML, CSS and JavaScript</li>
-            <li>Web Audio API</li>
-            <li>Granular synthesis</li>
-            <li>Nature and singing bowl recordings</li>
-            <li>Simple sliders and buttons</li>
-            <li>Slow visual animation</li>
-            <li>Mouse and touch interaction</li>
+            <li>Microphone recording</li>
+            <li>Built-in audio samples</li>
+            <li>Four sound layers</li>
+            <li>Loop playback</li>
+            <li>Volume and mute controls</li>
+            <li>Colour feedback</li>
+            <li>Simple group sessions</li>
           </ul>
         </article>
 
         <article>
           <h3>Not Included</h3>
           <ul>
-            <li>Fast beats and dance rhythms</li>
-            <li>Harsh distortion</li>
-            <li>Piano keyboard controls</li>
-            <li>Complex audio editing</li>
-            <li>Too many menus</li>
-            <li>User accounts</li>
-            <li>Scores or competition</li>
-            <li>Professional studio tools</li>
+            <li>Professional mixing tools</li>
+            <li>Music notation</li>
+            <li>Complex editing timelines</li>
+            <li>Competitive scoring</li>
+            <li>Public follower systems</li>
+            <li>AI-generated music</li>
           </ul>
         </article>
       </div>
 
-      <h3>Visual Style</h3>
+      <h3>Technology</h3>
       <p>
-        The website uses a light background, dark text and blue details.
-        This makes the information easy to read. Rounded shapes and slow
-        movement give the project a gentle and quiet feeling.
-      </p>
-
-      <h3>Sound Style</h3>
-      <p>
-        The sound should be soft, warm and continuous. It should not suddenly
-        become loud. The final version will use recorded sounds, while this
-        prototype uses browser-generated tones to test the interaction.
+        HTML will create the page structure. CSS will control the layout and visual
+        style. JavaScript will control buttons and interaction. The final instrument
+        could use the Web Audio API and microphone access.
       </p>
     </section>
 
     <section id="analysis">
       <h2>4. Interaction Design Analysis</h2>
 
-      <article class="research">
-        <div>
-          <h3>Ambient Chaos</h3>
-          <p>
-            Ambient Chaos uses one main slider. The page is simple, but the
-            sound can still change in different ways.
-          </p>
-          <p>
-            <strong>What I learned:</strong> GrainMeditate can also use one
-            main control to change several sound qualities.
-          </p>
-        </div>
-        <img src="images/ambient-chaos.png" alt="Ambient Chaos interface">
+      <article class="ui-card">
+        <h3>Chrome Music Lab: Song Maker</h3>
+        <p>
+          Song Maker uses a colourful grid to show rhythm and melody. It is easy to
+          understand because users can see where sounds are placed.
+        </p>
+        <p>
+          This inspired me to use a simple beat grid and colours to show each sound.
+        </p>
+        <a href="https://musiclab.chromeexperiments.com/Song-Maker/" target="_blank">
+          Visit Song Maker
+        </a>
       </article>
 
-      <article class="research">
-        <div>
-          <h3>Patatap</h3>
-          <p>
-            Patatap gives sound and visual feedback immediately. The user can
-            understand that an action has worked without reading instructions.
-          </p>
-          <p>
-            <strong>What I learned:</strong> GrainMeditate should also give
-            clear visual feedback when sound starts or changes.
-          </p>
-        </div>
-        <img src="images/patatap.png" alt="Patatap interface">
+      <article class="ui-card">
+        <h3>Incredibox</h3>
+        <p>
+          Incredibox allows users to drag sound icons onto animated characters. The
+          characters make music creation feel friendly and playful.
+        </p>
+        <p>
+          This inspired me to give each user a colour and clear visual identity.
+        </p>
+        <a href="https://www.incredibox.com/" target="_blank">
+          Visit Incredibox
+        </a>
       </article>
 
-      <article class="research">
-        <div>
-          <h3>Tone Matrix</h3>
-          <p>
-            Tone Matrix uses controls that also show the current state.
-            Active squares light up, so the user can see what is playing.
-          </p>
-          <p>
-            <strong>What I learned:</strong> The sound circle in my project
-            should move when audio is active.
-          </p>
-        </div>
-        <img src="images/tone-matrix.png" alt="Tone Matrix interface">
+      <article class="ui-card">
+        <h3>Ableton Learning Music</h3>
+        <p>
+          Ableton Learning Music teaches music through short interactive activities.
+          Users learn by trying actions and hearing the result immediately.
+        </p>
+        <p>
+          This inspired me to use short instructions inside the instrument.
+        </p>
+        <a href="https://learningmusic.ableton.com/" target="_blank">
+          Visit Ableton Learning Music
+        </a>
       </article>
 
-      <article class="research">
-        <div>
-          <h3>Chrome Music Lab Spectrogram</h3>
-          <p>
-            The Spectrogram shows sound as moving colour. This makes invisible
-            audio easier to understand and more interesting to watch.
-          </p>
-          <p>
-            <strong>What I learned:</strong> GrainMeditate should connect sound
-            with a simple visual movement.
-          </p>
-        </div>
-        <img src="images/spectrogram.png" alt="Chrome Music Lab Spectrogram">
+      <article class="ui-card">
+        <h3>Patatap</h3>
+        <p>
+          Patatap creates sound and animation when users press keyboard buttons.
+          The feedback is immediate and encourages experimentation.
+        </p>
+        <p>
+          This inspired me to connect every sound with a simple visual animation.
+        </p>
+        <a href="https://www.patatap.com/" target="_blank">
+          Visit Patatap
+        </a>
       </article>
     </section>
 
     <section id="system">
-      <h2>5. Simple System Design</h2>
+      <h2>5. Proposed System</h2>
 
-      <div class="system-grid">
+      <div class="steps">
         <article>
-          <h3>Input</h3>
-          <p>The user presses buttons and moves sliders.</p>
+          <h3>1. Join</h3>
+          <p>The user opens a shared link and enters a name.</p>
         </article>
 
         <article>
-          <h3>Audio</h3>
-          <p>JavaScript and the Web Audio API create and change the sound.</p>
+          <h3>2. Record</h3>
+          <p>The user records a short sound or selects a sample.</p>
         </article>
 
         <article>
-          <h3>Visual Feedback</h3>
-          <p>The circle moves when the sound is playing.</p>
+          <h3>3. Loop</h3>
+          <p>The sound repeats with the shared beat.</p>
         </article>
 
         <article>
-          <h3>Output</h3>
-          <p>The user hears a soft tone through speakers or headphones.</p>
+          <h3>4. Collaborate</h3>
+          <p>Other users add sounds to create one composition.</p>
         </article>
       </div>
+
+      <h3>Main Interface Areas</h3>
+      <ul>
+        <li>Session name and participant number</li>
+        <li>Play and stop button</li>
+        <li>Eight-beat loop display</li>
+        <li>Four sound layers</li>
+        <li>Record button</li>
+        <li>Volume, mute and delete buttons</li>
+      </ul>
     </section>
 
-    <section id="prototype">
-      <h2>6. Sound Prototype</h2>
+    <section>
+      <h2>6. Important Links</h2>
 
       <p>
-        First click Test Sound. You should hear a short beep.
-        Then click Start Ambient Sound and move the sliders.
+        <a href="https://github.com/YOUR-USERNAME" target="_blank">
+          My GitHub Profile
+        </a>
       </p>
 
-      <div class="player">
-        <div id="circle" class="circle" aria-hidden="true"></div>
-        <p id="status" aria-live="polite">Sound is stopped.</p>
+      <p>
+        <a href="https://miro.com/" target="_blank">
+          My Community of Practice Miro Board
+        </a>
+      </p>
 
-        <div class="buttons">
-          <button id="testButton" type="button">Test Sound</button>
-          <button id="playButton" type="button">Start Ambient Sound</button>
-        </div>
-
-        <label for="flow">
-          Flow
-          <span id="flowValue">50%</span>
-        </label>
-        <input id="flow" type="range" min="0" max="100" value="50">
-
-        <label for="volume">
-          Volume
-          <span id="volumeValue">70%</span>
-        </label>
-        <input id="volume" type="range" min="0" max="100" value="70">
-      </div>
+      <p class="note">
+        Replace these two links with your own GitHub and Miro links before submission.
+      </p>
     </section>
   </main>
 
+  <button id="topButton">Top</button>
+
   <footer>
-    <p>© 2026 Sihao Wang</p>
-    <p>
-      <a href="index.html">Home</a> |
-      <a href="https://github.com/BennyWangsihao" target="_blank" rel="noopener">GitHub</a> |
-      <a href="community.html">Community of Practice</a>
-    </p>
+    <p>Sihao Wang · s3997984 · Digital Media</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
